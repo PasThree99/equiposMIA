@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    <div>
+    <div class="equipo1">
         {% for equipo in items %}
             {% for integrante in equipo %}
                 <p> {{ integrante["Nombre"] }} </p>
@@ -10,6 +10,14 @@
             {% endfor %}
             <br>
             <br>
+
+        {% endfor %}
+    </div>
+
+    <div>
+        {% for integrante in items[0] %}
+
+        <p>{{ integrante["Nombre"] }}</p>
 
         {% endfor %}
     </div>
