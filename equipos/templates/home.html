@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    <div class="equipo1">
+    <!-- <div>
         {% for equipo in items %}
             {% for integrante in equipo %}
                 <p> {{ integrante["Nombre"] }} </p>
@@ -12,14 +12,130 @@
             <br>
 
         {% endfor %}
+    </div> -->
+
+    <div class="sliderContainer">
+        <div class="slider">
+            <div class="sliderElement">
+                {% for integrante in items[0] %}
+
+                <p>{{ integrante["Nombre"] }}</p>
+
+                {% endfor %}
+            </div>
+            <div class="sliderElement">
+                {% for integrante in items[1] %}
+
+                <p>{{ integrante["Nombre"] }}</p>
+
+                {% endfor %}
+            </div>
+            <div class="sliderElement">
+                {% for integrante in items[2] %}
+
+                <p>{{ integrante["Nombre"] }}</p>
+
+                {% endfor %}
+            </div>
+            <div class="sliderElement">
+                {% for integrante in items[3] %}
+
+                <p>{{ integrante["Nombre"] }}</p>
+
+                {% endfor %}
+            </div>
+            <div class="sliderElement">
+                {% for integrante in items[4] %}
+
+                <p>{{ integrante["Nombre"] }}</p>
+
+                {% endfor %}
+            </div>
+            <div class="sliderElement">
+                {% for integrante in items[5] %}
+
+                <p>{{ integrante["Nombre"] }}</p>
+
+                {% endfor %}
+            </div>
+            <div class="sliderElement">
+                {% for integrante in items[6] %}
+
+                <p>{{ integrante["Nombre"] }}</p>
+
+                {% endfor %}
+            </div>
+            <div class="sliderElement">
+                {% for integrante in items[7] %}
+
+                <p>{{ integrante["Nombre"] }}</p>
+
+                {% endfor %}
+            </div>
+            <div class="sliderElement">
+                {% for integrante in items[8] %}
+
+                <p>{{ integrante["Nombre"] }}</p>
+
+                {% endfor %}
+            </div>
+            <div class="sliderElement">
+                {% for integrante in items[9] %}
+
+                <p>{{ integrante["Nombre"] }}</p>
+
+                {% endfor %}
+            </div>
+            <div class="sliderElement">
+                {% for integrante in items[10] %}
+
+                <p>{{ integrante["Nombre"] }}</p>
+
+                {% endfor %}
+            </div>
+
+        </div>
     </div>
 
-    <div>
-        {% for integrante in items[0] %}
+    <p class="botonRigth"> &lt; </p>
+    <p class="botonLeft"> &gt; </p>
 
-        <p>{{ integrante["Nombre"] }}</p>
+    <script>
+        const slider = document.querySelector(".slider");
+        let allElements = document.querySelectorAll(".sliderElement");
+        let lastElement = allElements[allElements.length -1];
+        const btnRight = document.querySelector(".botonRigth");
+        const btnLeft = document.querySelector(".botonLeft");
 
-        {% endfor %}
-    </div>
+        slider.insertAdjacentElement("afterbegin",lastElement);
+        slider.style.marginLeft = "-100%";
+
+        btnLeft.addEventListener("click",function(){
+
+            let sliderSectionLast = document.querySelectorAll(".sliderElement")[allElements.length - 1];
+            slider.style.marginLeft = "0%";
+            slider.style.transition = "all 0.5s";
+            setTimeout(function () {
+                slider.style.transition = "none";
+                slider.insertAdjacentElement("afterbegin", sliderSectionLast);
+                slider.style.marginLeft = "-100%";
+            }, 500);
+        }); 
+        btnRight.addEventListener("click",function(){
+
+            let sliderSectionLast = document.querySelectorAll(".sliderElement")[0];
+            slider.style.marginLeft = "-200%";
+            slider.style.transition = "all 0.5s";
+            setTimeout(function () {
+                slider.style.transition = "none";
+                slider.insertAdjacentElement("beforeend", sliderSectionLast);
+                slider.style.marginLeft = "-100%";
+            }, 500);
+        }); 
+
+
+    </script>
+
+
 
 {% endblock %}

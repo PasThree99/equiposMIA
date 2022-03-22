@@ -11,3 +11,22 @@ body{
     margin-top: 0;
 }
 
+.sliderContainer{
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+}
+.slider{
+    width: 1100%;
+    display: flex;
+
+
+}
+.sliderElement{
+    width: 100%;
+    border: solid black 1px;
+}
+
+.sliderElement p{
+    color: aqua;
+}
