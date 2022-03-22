@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div>
+        {% for equipo in items %}
+            {% for integrante in equipo %}
+                <p> {{ integrante["Nombre"] }} </p>
+
+            {% endfor %}
+            <br>
+            <br>
+
+        {% endfor %}
+    </div>
+
+{% endblock %}
